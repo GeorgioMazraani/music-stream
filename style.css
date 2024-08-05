@@ -1,0 +1,251 @@
+body {
+    background: linear-gradient(135deg, rgba(117, 67, 218, 1), rgba(67, 218, 117, 1));
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    transition: background-color .5s;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.track-art {
+    margin: 25px 0;
+    height: 150px;
+    width: 150px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.logo-box {
+    background-image: url("logo.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.now-playing {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.track-name {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.track-artist {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #bbb;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.playpause-track {
+    padding: 10px;
+    opacity: 0.8;
+    transition: opacity .2s, transform .2s, color .5s;
+    animation: pulse 2s infinite;
+    color: #fff;
+}
+
+.playpause-track:hover {
+    opacity: 1.0;
+    transform: scale(1.1);
+    color: rgb(67, 218, 117);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.slider_container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: black;
+    opacity: 0.7;
+    transition: opacity .2s;
+    margin: 0 10px;
+    width: 100%;
+}
+
+.volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform .2s, background-color .5s;
+}
+
+.volume_slider:hover {
+    opacity: 1.0;
+}
+
+.volume_slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    background-color: rgb(67, 218, 117);
+}
+
+i.fa-volume-down,
+i.fa-volume-up {
+    padding: 0 10px;
+}
+
+i.fa-play-circle,
+i.fa-pause-circle {
+    cursor: pointer;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity .2s, transform .2s, color .5s;
+}
+
+.social-icons a:hover {
+    opacity: 1.0;
+    transform: scale(1.1);
+    color: rgb(67, 218, 117);
+}
+
+.social-icons i {
+    font-size: 1.5rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .player {
+        width: 95%;
+        max-width: 90%;
+    }
+
+    .track-art {
+        height: 120px;
+        width: 120px;
+    }
+
+    .playpause-track {
+        font-size: 3rem;
+    }
+
+    .volume_slider {
+        width: 70%;
+    }
+
+    .social-icons i {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .player {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .track-art {
+        height: 100px;
+        width: 100px;
+    }
+
+    .playpause-track {
+        font-size: 2rem;
+    }
+
+    .volume_slider {
+        width: 60%;
+    }
+
+    .social-icons i {
+        font-size: 1rem;
+    }
+}
