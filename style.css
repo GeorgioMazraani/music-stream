@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(135deg, rgba(117, 67, 218, 1), rgba(67, 218, 117, 1));
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
     background-size: 400% 400%;
     animation: gradientBackground 15s ease infinite;
     display: flex;
@@ -110,7 +110,7 @@ body {
 .playpause-track:hover {
     opacity: 1.0;
     transform: scale(1.1);
-    color: rgb(67, 218, 117);
+    color: rgba(67, 218, 117, 1);
 }
 
 @keyframes pulse {
@@ -165,7 +165,7 @@ body {
 
 .volume_slider::-webkit-slider-thumb:hover {
     transform: scale(1.2);
-    background-color: rgb(67, 218, 117);
+    background-color: rgba(67, 218, 117, 1);
 }
 
 i.fa-volume-down,
@@ -193,7 +193,7 @@ i.fa-pause-circle {
 .social-icons a:hover {
     opacity: 1.0;
     transform: scale(1.1);
-    color: rgb(67, 218, 117);
+    color: rgba(67, 218, 117, 1);
 }
 
 .social-icons i {
