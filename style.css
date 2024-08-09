@@ -1,6 +1,7 @@
 body {
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
-    background-size: 400% 400%;
+    background: linear-gradient(to bottom, rgba(10, 15, 20, 0.9) 30%, rgba(5, 10, 15, 0.9)),
+        url('https://www.transparenttextures.com/patterns/gray-floral.png');
+    background-size: cover, 300% 300%;
     animation: gradientBackground 15s ease infinite;
     display: flex;
     justify-content: center;
@@ -14,15 +15,29 @@ body {
 
 @keyframes gradientBackground {
     0% {
-        background-position: 0% 50%;
+        background-position: 50% 0%;
     }
 
     50% {
-        background-position: 100% 50%;
+        background-position: 50% 100%;
     }
 
     100% {
-        background-position: 0% 50%;
+        background-position: 50% 0%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
     }
 }
 
@@ -37,18 +52,8 @@ body {
     width: 90%;
     max-width: 400px;
     text-align: center;
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 2.5s ease-in-out;
     margin: 10px;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
 
 .details {
@@ -105,7 +110,7 @@ body {
 .playpause-track:hover {
     opacity: 1.0;
     transform: scale(1.1);
-    color: rgba(67, 218, 117, 1);
+    color: rgba(50, 68, 92, 1);
 }
 
 @keyframes pulse {
@@ -123,36 +128,13 @@ body {
 }
 
 
-.seek-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-
-.seek-button button {
-    background-color: rgba(67, 218, 117, 1);
-    border: none;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 5px;
-    transition: background-color 0.3s;
-}
-
-.seek-button button:hover {
-    background-color: rgba(47, 198, 97, 1);
-}
-
 
 .go-live-container {
     margin: 20px 0;
 }
 
 .go-live-button {
-    background-color: rgba(67, 218, 117, 1);
+    background-color: #32445c;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -162,11 +144,21 @@ body {
 }
 
 .go-live-button:hover {
-    background-color: rgba(47, 198, 97, 1);
+    background-color: rgb(139, 164, 196);
+}
+
+.advertisement-text {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
 }
 
 .social-icons {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .social-icons a {
@@ -180,7 +172,7 @@ body {
 .social-icons a:hover {
     opacity: 1.0;
     transform: scale(1.1);
-    color: rgba(67, 218, 117, 1);
+    color: rgba(50, 68, 92, 1);
 }
 
 .social-icons i {
@@ -205,6 +197,10 @@ body {
     .social-icons i {
         font-size: 1.2rem;
     }
+
+    .advertisement-text {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -225,5 +221,9 @@ body {
 
     .social-icons i {
         font-size: 1rem;
+    }
+
+    .advertisement-text {
+        font-size: 0.8rem;
     }
 }
