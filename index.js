@@ -49,5 +49,16 @@ function pauseTrack() {
 }
 
 function goLive() {
-    location.reload();
+    curr_track.pause();
+    curr_track.currentTime = 0;
+    curr_track.src = streamURL;
+    curr_track.load();
+
+    curr_track.play().then(() => {
+        isPlaying = true;
+        playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+    }).catch(error => {
+        console.error('Error playing the audio track:', error);
+        alert('Error playing the audio track. Please check the URL or try another one.');
+    });
 }
